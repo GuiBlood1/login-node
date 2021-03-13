@@ -1,18 +1,17 @@
 const express = require('express')
-const app = express()
+const server = express()
 
-app.set('view-engine' , 'ejs')
-
-app.get('/',(req,res)=>{
-    res.render('index.ejs', {nome : 'Guilherme'})
+server.set('view-engine','ejs')
+server.get('/',(req,res)=>{
+    res.render('index.ejs')
 })
 
-app.get('/login' ,(req,res)=>{
-    res.render('login.ejs')
-})
-
-app.get('/registro',(req,res)=>{
+server.get('/registro',(req,res)=>{
     res.render('registro.ejs')
 })
 
-app.listen(3000)
+server.get('/login',(req,res)=>{
+    res.render('login.ejs')
+})
+
+server.listen(3000)
